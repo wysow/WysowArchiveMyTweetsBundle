@@ -27,4 +27,4 @@ This bundle is under the MIT license. See the complete license in the bundle:
 ## Credits
 
 - [Wysow](https://github.com/wysow), and [amwhalen](https://github.com/amwhalen)
-- Inspirated by [archive-my-tweets](https://github.com/amwhalen/archive-my-tweets)
+- Inspired by [archive-my-tweets](https://github.com/amwhalen/archive-my-tweets)
