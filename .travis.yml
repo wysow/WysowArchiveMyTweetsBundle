@@ -6,7 +6,7 @@ php:
 
 before_script:
     - mv Tests/app/config/parameters.yml.dist Tests/app/config/parameters.yml
-    - mysql -e 'create database archivemytweets-test;'
+    - mysql -e 'create database "archivemytweets-symfony";'
     - composer self-update
     - composer install --dev --prefer-source
 
