@@ -7,7 +7,7 @@ This version of the bundle requires Symfony 2.3.
 
 ## Installation
 
-Installation is a quick 3 steps process:
+Installation is a quick 4 steps process:
 
 1. Download FOSOAuthServerBundle
 2. Enable the Bundle
