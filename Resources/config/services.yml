@@ -1,0 +1,34 @@
+parameters:
+    gravatar_email: ~
+    twitter_username: ~
+    twitter_name: ~
+    twitter_consumer_key: ~
+    twitter_consumer_secret: ~
+
+services:
+    wysow_archive_my_tweets.twitter.oauth:
+        class: TijsVerkoyen\Twitter\Twitter
+        arguments:
+            - %wysow_archive_my_tweets.twitter.consumer_key%
+            - %wysow_archive_my_tweets.twitter.consumer_secret%
+    wysow_archive_my_tweets.twitter.archiver:
+        class: Wysow\ArchiveMyTweetsBundle\Twitter\Archiver
+        arguments:
+            - @wysow_archive_my_tweets.twitter.oauth
+            - %wysow_archive_my_tweets.twitter.oauth_token%
+            - %wysow_archive_my_tweets.twitter.oauth_secret%
+            - @doctrine.orm.entity_manager
+            - %wysow_archive_my_tweets.twitter.username%
+
+    wysow_archive_my_tweets.twitter.twig.extension:
+        class: Wysow\ArchiveMyTweetsBundle\Extension\Twitter
+        arguments:
+            - %wysow_archive_my_tweets.twitter.username%
+            - %wysow_archive_my_tweets.twitter.name%
+        tags:
+            -  { name: twig.extension }
+
+    wysow_archive_my_tweets.gravatar.twig.extension:
+        class: Wysow\ArchiveMyTweetsBundle\Extension\Gravatar
+        tags:
+            -  { name: twig.extension }
