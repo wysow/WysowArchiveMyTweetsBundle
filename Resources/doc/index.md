@@ -76,7 +76,7 @@ wysow_archive_my_tweets:
 
 If you want to automatically update your tweets you'll need to set up a cron job. You can find more information on Cron elsewhere, but here's an example that will run your cron.php every hour of the day:
 
-    `0 * * * * /usr/bin/env php /path/to/the/app/console wysow:twitter:archive [--with-favorites]`
+    0 * * * * /usr/bin/env php /path/to/the/app/console wysow:twitter:archive [--with-favorites]
 
 The `with-favorites` option is to import your own tweets + the tweets you have favorited.
 
@@ -88,10 +88,10 @@ Twitter now allows most accounts (they're still rolling this out) to download an
 
 To import the archive follow these steps:
 
-### Step 1: Visit your Twitter account settings: [https://twitter.com/settings/account](https://twitter.com/settings/account)
-### Step 2: Near the bottom of the settings page there should be a button to download your archive. (If you don't see it yet, you may have to wait until it's rolled out to all accounts.)
-### Step 3: Once you've downloaded and unzipped your archive, copy all of the .js files in the `app/Ressources/tweets` folder.
-### Step 4: Run the command `php /path/to/the/app/console wysow:twitter:archive --from-import=/path/to/the/app/Ressources/tweets` to import all your tweets in database
+1. Visit your Twitter account settings: [https://twitter.com/settings/account](https://twitter.com/settings/account)
+2. Near the bottom of the settings page there should be a button to download your archive. (If you don't see it yet, you may have to wait until it's rolled out to all accounts.)
+3. Once you've downloaded and unzipped your archive, copy all of the .js files in the `app/Ressources/tweets` folder.
+4. Run the command `php /path/to/the/app/console wysow:twitter:archive --from-import=/path/to/the/app/Ressources/tweets` to import all your tweets in database
 
 You'll only have to do this one time, as the cron running regularly will import all your newest tweets. Tweets that are already in your database will be ignored, so don't worry about duplication.
 
